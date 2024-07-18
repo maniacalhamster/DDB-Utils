@@ -26,9 +26,11 @@ async function DescribeTables() {
   return tableDefs;
 }
 
-DescribeTables()
-  .then((tableDefs) => JSON.stringify(tableDefs, undefined, 2))
-  .then((json) => console.log(json));
+if (require.main === module) {
+  DescribeTables()
+    .then((tableDefs) => JSON.stringify(tableDefs, undefined, 2))
+    .then((json) => console.log(json));
+}
 
 module.exports = {
   DescribeTables,

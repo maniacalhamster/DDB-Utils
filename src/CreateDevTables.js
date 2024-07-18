@@ -52,6 +52,8 @@ async function CreateDevDup(Table) {
   );
 }
 
-DescribeTables().then((Tables) =>
-  Tables.forEach((Table) => CreateDevDup(Table))
-);
+if (require.main === module) {
+  DescribeTables().then((Tables) =>
+    Tables.forEach((Table) => CreateDevDup(Table))
+  );
+}
