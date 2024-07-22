@@ -112,3 +112,7 @@ DescribeTables()
       // ResetDevTable(devTable);
     })
   );
+
+module.exports = {
+  FetchAll,
+};
